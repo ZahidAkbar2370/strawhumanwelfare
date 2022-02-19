@@ -548,7 +548,7 @@
                 <div class="block-23 mb-3">
                   <ul>
                     <li><span class="icon icon-map-marker"></span><span class="text">Mohala Shah Latif Ward no 2 Layyah</span></li>
-                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+92 308 5168283</span></a></li>
                     <li><a href="#"><span class="icon icon-envelope"></span><span class="text">asadsaleem@gmail.com</span></a></li>
                   </ul>
                 </div>

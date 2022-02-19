@@ -33,7 +33,7 @@
             </div>
             <div class="profile-usertitle">
                 
-                <div class="profile-usertitle-name">Abid</div>
+                <div class="profile-usertitle-name">{{Auth::user()->name}}</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
             </div>
             <div class="clear"></div>
@@ -41,7 +41,7 @@
         <div class="divider"></div>
         
         <ul class="nav menu">
-            <li class="active"><a href="{{url('user_layout')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li class="active"><a href="{{url('dashboard')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 
 
               <li class="parent "><a data-toggle="collapse" href="#sub-item-4">

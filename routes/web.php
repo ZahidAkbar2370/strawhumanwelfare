@@ -14,14 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('/home');
 });
 
-///////////////////////////////////////////////////Admin Pannel/////////////////////////////////////////////
+///////////////////////////////////////////////////Admin Pannel///////////////////////////////////
 
-// Route::get('/admin-layout', function() {
-//     return view('Admin.admin_layout');
-// });
+Route::group(['middleware' => ['auth','isAdmin']] , function() {
+
+    Route::get('/admin-layout' , function() {
+        return view('Admin.admin_layout');
+    });
+
+// Dasboard
+Route::get('/dashboard' , [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
 
 // Fundrisers
 
@@ -68,11 +73,6 @@ Route::get('/destroy-fund/{id}', [App\Http\Controllers\Admin\FundController::cla
 Route::get('/edit-fund/{id}', [App\Http\Controllers\Admin\FundController::class, 'editfund'])->name('edit-fund');
 Route::post('/update-fund', [App\Http\Controllers\Admin\FundController::class, 'updatefund'])->name('update-fund');
 
-
-Route::group(['middleware' => ['auth','isAdmin']] , function() {
-    Route::get('/admin-layout' , function() {
-        return view('Admin.admin_layout');
-    });
 });
 
 // ContactMail
@@ -80,8 +80,7 @@ Route::group(['middleware' => ['auth','isAdmin']] , function() {
 Route::post('contactus',[App\Http\Controllers\MailController::class, 'sendemail']);
 Route::get('view-mails',[App\Http\Controllers\MailController::class, 'viewmails']);
 
-
-
+// Auth
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
