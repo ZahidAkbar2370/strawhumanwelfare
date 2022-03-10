@@ -60,5 +60,5 @@ class FundController extends Controller
         $updatefund->amount = $req->amount; 
         $updatefund->update();
         return redirect('view-funds');
-    }
+     }
 }
